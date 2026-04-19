@@ -1,6 +1,6 @@
-function endresult = PatternsToImage2(image) %CHANGE THIS PLEASE DON"T BE DUMB
-[m,n] = size(image)                         %WHAT IS HIGHLIGHTED ABOVE
-% dataPoints1 = zeros(m,n)                  %DO NOT MISS THIS!!!!!!!!!!!!!
+function endresult = PatternsToImage2(image)
+[m,n] = size(image)                         
+% dataPoints1 = zeros(m,n)
 % dataPoints1 = num2cell(dataPoints1)
 dataPoints2 = zeros(2*m,2*n)
 array1 = zeros(1,2);
@@ -9,7 +9,7 @@ array2 = zeros(1,2);
 for i = 1:m
     for j = 1:n
         if j == 1 %selects the first image
-            image_in_array = image(i,j); %selects an image in order of which they are saved in array of images
+            image_in_array = image(i,j);
             image_in_array = cell2mat(image_in_array); %converts the these images from cell arrays to an oridinary array
             k = 1;
             for l = 1:2
@@ -18,11 +18,10 @@ for i = 1:m
             end
             o = 2;
             for p = 1:2
-                b =  image_in_array(o,p); %takes the second two components of the array in the second row of the two by two matrix
-                array2(1,p) = b; %and saves these values into array2 positions (2,1) and (2,2)
+                b =  image_in_array(o,p);
+                array2(1,p) = b;
             end
-            combined_array1 = {array1, array2} %combines the two separated arrays horizontally (array1's two values in one cell array and array2's two values in another cell array)
-        end
+            combined_array1 = {array1, array2}
         if j == 2 %selects the second image
             image_in_array = image(i,j);
             image_in_array = cell2mat(image_in_array);
